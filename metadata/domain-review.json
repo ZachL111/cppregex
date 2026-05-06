@@ -1,0 +1,73 @@
+{
+  "repo": "cppregex",
+  "language": "C++",
+  "category": "Algorithms",
+  "goal": "Compile a regex subset into Thompson NFA transitions.",
+  "review_model": {
+    "terms": [
+      "input width",
+      "search depth",
+      "boundary pressure",
+      "complexity"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "input width",
+      "signal": 40,
+      "slack": 33,
+      "drag": 25,
+      "confidence": 67,
+      "score": 105,
+      "lane": "watch"
+    },
+    {
+      "name": "stress",
+      "focus": "search depth",
+      "signal": 63,
+      "slack": 51,
+      "drag": 28,
+      "confidence": 75,
+      "score": 168,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "boundary pressure",
+      "signal": 53,
+      "slack": 35,
+      "drag": 28,
+      "confidence": 65,
+      "score": 122,
+      "lane": "watch"
+    },
+    {
+      "name": "recovery",
+      "focus": "complexity",
+      "signal": 70,
+      "slack": 29,
+      "drag": 22,
+      "confidence": 62,
+      "score": 165,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "input width",
+      "signal": 75,
+      "slack": 31,
+      "drag": 16,
+      "confidence": 74,
+      "score": 207,
+      "lane": "ship"
+    }
+  ]
+}
